@@ -1,0 +1,26 @@
+{
+  "name": "goral-dashboard",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "^0.14.0",
+    "chart.js": "^4.5.1",
+    "nuxt": "^4.4.8",
+    "vue": "^3.5.35",
+    "vue-chartjs": "^5.3.3",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "tailwindcss": "^4.3.1",
+    "vitest": "^4.1.9"
+  }
+}
