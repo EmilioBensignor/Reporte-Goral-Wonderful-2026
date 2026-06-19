@@ -1,10 +1,7 @@
 <template>
   <section class="flex flex-col gap-6">
-    <EncabezadoSeccion
-      kicker="Ritmo de cosecha"
-      titulo="Cómo se distribuyó el trabajo en el tiempo"
-      :conclusion="`La cosecha corrió del 18 de febrero al 28 de abril. El día más fuerte fue el ${diaPico} con ${nf(pico)} cajas.`"
-    />
+    <EncabezadoSeccion kicker="Ritmo de cosecha" titulo="Cómo se distribuyó el trabajo en el tiempo"
+      :conclusion="`La cosecha corrió del 18 de febrero al 28 de abril. El día más fuerte fue el ${diaPico} con ${nf(pico)} cajas.`" />
 
     <div class="rounded-3xl bg-white p-5 ring-1 ring-gris-claro/40 md:p-7">
       <div class="h-72 md:h-80">

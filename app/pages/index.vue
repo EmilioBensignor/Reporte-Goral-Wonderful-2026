@@ -1,24 +1,15 @@
 <template>
   <div>
     <header class="border-b border-gris-claro/40 bg-crema/80 backdrop-blur sticky top-0 z-10">
-      <div class="max-w-7xl mx-auto flex items-center justify-between px-5 py-4 md:px-8">
-        <div class="flex items-center gap-3">
-          <span class="flex size-9 items-center justify-center rounded-full bg-rojo font-display text-crema">G</span>
-          <span class="font-display text-lg text-vino">Goral</span>
-        </div>
-        <span class="text-xs text-gris uppercase tracking-[0.2em]">Reporte de cosecha {{ data.meta.temporada }}</span>
+      <div class="max-content mx-auto flex flex-wrap justify-between items-center gap-4 px-5 py-4 md:px-8">
+        <span class="font-display text-lg lg:text-3xl text-vino">Goral</span>
+        <span class="text-xs lg:text-lg text-gris uppercase">Reporte de cosecha {{
+          data.meta.temporada }}</span>
       </div>
     </header>
 
-    <main class="max-w-7xl mx-auto flex flex-col gap-16 px-5 py-10 md:gap-20 md:px-8 md:py-14 lg:gap-24">
-      <div class="flex flex-col gap-3">
-        <p class="text-sm text-gris md:text-base">
-          La temporada {{ data.meta.temporada }} de granadas {{ data.meta.variedad }}, contada en cajas, calibres y cuadros.
-          {{ data.meta.totales.palets }} palets relevados sobre {{ data.meta.totales.cuadros }} cuadros de la finca.
-        </p>
-        <KpiHero :meta="data.meta" />
-      </div>
-
+    <main class="max-content mx-auto flex flex-col gap-16 md:gap-20 lg:gap-24 px-5 py-10 md:px-8 md:py-14">
+      <KpiHero :meta="data.meta" />
       <SeccionCalibre :histograma="data.histograma_calibre" />
       <SeccionCuadros :por-cuadro="data.por_cuadro" :total="data.meta.totales.cajas" />
       <SeccionCalibrePorCuadro :matriz="data.calibre_por_cuadro" />
@@ -28,8 +19,8 @@
     </main>
 
     <footer class="border-t border-gris-claro/40">
-      <div class="max-w-7xl mx-auto flex flex-col gap-1 px-5 py-8 text-xs text-gris md:px-8">
-        <span class="font-display text-sm text-vino">Goral · Granadas {{ data.meta.variedad }}</span>
+      <div class="max-content mx-auto flex flex-col gap-2 px-5 py-8 text-sm lg:text-base text-gris md:px-8">
+        <span class="font-display text-vino">Goral · Granadas {{ data.meta.variedad }}</span>
         <span>San Juan, Argentina · Temporada {{ data.meta.temporada }}</span>
       </div>
     </footer>

@@ -3,12 +3,12 @@
     <EncabezadoSeccion
       kicker="Calidad de la fruta"
       titulo="La temporada se concentró en fruta de buen tamaño"
-      :conclusion="`Los calibres 8, 9 y 10 reúnen el ${pctGrueso}% de la producción. Un calibre más bajo significa fruta más grande.`"
+      :conclusion="`Los calibres 8, 9 y 10 reúnen el ${pctGrueso}% de la producción`"
     />
 
     <div class="flex flex-col gap-5 rounded-3xl bg-white p-5 ring-1 ring-gris-claro/40 md:p-7">
-      <div class="flex items-center justify-between text-sm text-gris">
-        <span class="flex items-center gap-2"><span class="size-3 rounded-full" :style="{ background: colorPorCalibre(5) }" />Fruta grande (calibre 5)</span>
+      <div class="flex items-center justify-between text-sm lg:text-xl text-gris">
+        <span class="flex items-center gap-2"><span class="size-3 lg:size-4 rounded-full" :style="{ background: colorPorCalibre(5) }" />Fruta grande (calibre 5)</span>
         <span class="flex items-center gap-2">Fruta chica (calibre 14)<span class="size-3 rounded-full" :style="{ background: colorPorCalibre(14) }" /></span>
       </div>
       <div class="h-72 md:h-80">

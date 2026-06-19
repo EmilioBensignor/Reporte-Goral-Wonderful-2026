@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col gap-2">
-    <span class="text-sm font-semibold text-rojo tracking-[0.2em] uppercase">{{ kicker }}</span>
-    <h2 class="font-display text-2xl text-vino lg:text-3xl">{{ titulo }}</h2>
-    <p v-if="conclusion" class="text-sm text-gris lg:text-base">{{ conclusion }}</p>
+    <span class="text-sm lg:text-xl font-semibold text-rojo uppercase">{{ kicker }}</span>
+    <h2 class="font-display text-2xl text-vino lg:text-4xl">{{ titulo }}</h2>
+    <p v-if="conclusion" class="lg:text-2xl">{{ conclusion }}</p>
   </div>
 </template>
 

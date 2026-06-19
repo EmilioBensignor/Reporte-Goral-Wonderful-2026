@@ -38,3 +38,7 @@ html {
     scroll-behavior: auto !important;
   }
 }
+
+.max-content {
+  max-width: 1440px;
+}

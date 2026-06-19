@@ -1,10 +1,7 @@
 <template>
   <section class="flex flex-col gap-6">
-    <EncabezadoSeccion
-      kicker="Calidad por cuadro"
-      titulo="Qué calibres aportó cada cuadro"
-      conclusion="Cada barra es un cuadro; los tramos verdes son fruta grande y los rojos fruta chica. Sirve para comparar qué cuadro dio mejor calidad."
-    />
+    <EncabezadoSeccion kicker="Calidad por cuadro" titulo="Qué calibres aportó cada cuadro"
+      conclusion="Cada barra es un cuadro; los tramos verdes son fruta grande y los rojos fruta chica" />
 
     <div class="rounded-3xl bg-white p-5 ring-1 ring-gris-claro/40 md:p-7">
       <div class="h-96">
