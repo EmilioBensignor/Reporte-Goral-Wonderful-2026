@@ -2,8 +2,8 @@
   <section class="overflow-hidden rounded-3xl bg-vino text-crema p-7 md:p-10 lg:p-14">
     <div class="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
       <div class="flex flex-col gap-4">
-        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl">{{ nf(meta.totales.cajas) }}</h1>
-        <p class="text-base lg:text-3xl">Cajas cosechadas · {{ kg(meta.totales.cajas) }} de granada</p>
+        <p class="font-display text-3xl md:text-6xl lg:text-7xl">{{ kg(meta.totales.cajas) }} <span class="text-xl md:text-4xl lg:text-5xl">de granada</span></p>
+        <p class="text-2xl lg:text-4xl">{{ nf(meta.totales.cajas) }} <span class="text-base lg:text-3xl">cajas cosechadas</span></p>
       </div>
 
       <div class="flex flex-col gap-2 text-crema lg:text-2xl font-medium">

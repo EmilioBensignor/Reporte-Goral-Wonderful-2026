@@ -16,6 +16,11 @@
             descarte.palets_con_dato + descarte.palets_sin_dato }}</strong> palets. El descarte real es <strong
               class="text-crema">≥ {{ nf(descarte.registrado_kg) }} kg</strong>.</p>
         </div>
+        <div class="flex flex-col gap-1 border-t border-crema/15 pt-5">
+          <span class="font-display text-4xl lg:text-5xl">{{ nf(estimadoKg) }}<span class="ml-2 text-xl">kg</span></span>
+          <span class="text-xl lg:text-2xl">Descarte estimado de la temporada</span>
+          <span class="text-sm lg:text-lg text-crema">Estimación: 150 kg por cada palet sin dato anotado.</span>
+        </div>
       </div>
 
       <div class="flex flex-col gap-3 rounded-3xl bg-white p-7 ring-1 ring-gris-claro/40 md:p-9">
@@ -42,4 +47,5 @@ const props = defineProps({
 
 const { nf } = useFormato()
 const conDescarte = computed(() => props.porCuadro.filter((c) => c.descarte_kg > 0))
+const estimadoKg = computed(() => props.descarte.registrado_kg + props.descarte.palets_sin_dato * 150)
 </script>
