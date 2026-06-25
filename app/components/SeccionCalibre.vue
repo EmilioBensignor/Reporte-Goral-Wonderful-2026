@@ -11,8 +11,8 @@
         <span class="flex items-center gap-2"><span class="size-3 lg:size-4 rounded-full" :style="{ background: colorPorCalibre(5) }" />Fruta grande (calibre 5)</span>
         <span class="flex items-center gap-2">Fruta chica (calibre 14)<span class="size-3 rounded-full" :style="{ background: colorPorCalibre(14) }" /></span>
       </div>
-      <div class="h-72 md:h-80">
-        <BaseChart type="bar" :data="chartData" :options="chartOptions" />
+      <div class="h-96 md:h-112">
+        <BaseChart type="bar" :data="chartData" :options="chartOptions" :plugins="[etiquetasPct]" />
       </div>
     </div>
   </section>
@@ -46,10 +46,27 @@ const chartData = computed(() => ({
   }],
 }))
 
+const etiquetasPct = {
+  id: 'etiquetasPct',
+  afterDatasetsDraw(chart) {
+    const { ctx } = chart
+    const meta = chart.getDatasetMeta(0)
+    ctx.save()
+    ctx.textAlign = 'center'
+    ctx.fillStyle = '#480311'
+    ctx.font = '600 13px sans-serif'
+    meta.data.forEach((bar, i) => {
+      ctx.fillText(`${Math.round(props.histograma[i].pct)}%`, bar.x, bar.y - 6)
+    })
+    ctx.restore()
+  },
+}
+
 const chartOptions = {
+  plugins: { legend: { display: false } },
   scales: {
     x: { title: { display: true, text: 'Calibre (frutas por caja)', color: '#615b5c' }, grid: { display: false }, ticks: { color: '#480311', font: { size: 13 } } },
-    y: { beginAtZero: true, grid: { color: '#ede6e6' }, ticks: { color: '#615b5c' } },
+    y: { beginAtZero: true, grace: '8%', grid: { color: '#ede6e6' }, ticks: { color: '#615b5c' } },
   },
 }
 </script>

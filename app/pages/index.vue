@@ -15,6 +15,7 @@
       <SeccionCalibre :histograma="data.histograma_calibre" />
       <SeccionCuadros :por-cuadro="data.por_cuadro" :total="data.meta.totales.cajas" />
       <SeccionCalibrePorCuadro :matriz="data.calibre_por_cuadro" />
+      <SeccionExportacion :exportacion="data.exportacion" />
       <SeccionFecha :por-fecha="data.por_fecha" />
       <SeccionDescarte :descarte="data.meta.descarte" :por-cuadro="data.por_cuadro" />
       <NotaMetodologica />

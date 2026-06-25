@@ -59,7 +59,7 @@ const props = defineProps({
 })
 
 const { nf, pct } = useFormato()
-const orden = ref({ campo: 'cajas', desc: true })
+const orden = ref({ campo: 'cuadro', desc: false })
 
 const ordenarPor = (campo) => {
   if (orden.value.campo === campo) orden.value.desc = !orden.value.desc

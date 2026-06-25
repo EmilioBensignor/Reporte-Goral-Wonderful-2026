@@ -4,70 +4,724 @@
     "variedad": "Wonderful (W)",
     "productor": "Goral",
     "kg_por_caja": 3.8,
-    "periodo": { "desde": "2026-02-18", "hasta": "2026-04-28" },
-    "totales": { "palets": 93, "cajas": 19804, "kg": 75255, "cuadros": 8 },
+    "periodo": {
+      "desde": "2026-02-18",
+      "hasta": "2026-04-28"
+    },
+    "totales": {
+      "palets": 93,
+      "cajas": 19804,
+      "kg": 75255,
+      "cuadros": 8
+    },
     "descarte": {
       "registrado_kg": 794,
       "palets_con_dato": 8,
       "palets_sin_dato": 85,
       "nota": "El descarte real es >= 794 kg: 85 de 93 palets no tienen el dato anotado en la planilla."
     },
-    "zonas": { "Zonda": 57, "Barcelo": 34 },
+    "zonas": {
+      "Zonda": 57,
+      "Barcelo": 34
+    },
     "multi_cuadro": {
       "nota": "5 planillas tenian varios cuadros anotados; sus cajas se repartieron en partes iguales entre cuadros (confirmado por Goral). Por eso los palets por cuadro son fraccionarios.",
       "casos": [
-        { "palet": 88, "cuadros": [8, 7, 6] },
-        { "palet": 3, "cuadros": [4, 3, 2] },
-        { "palet": 1, "cuadros": [6, 7] },
-        { "palet": 90, "cuadros": [8, 5] },
-        { "palet": 91, "cuadros": [4, 3] },
-        { "palet": 89, "cuadros": [6, 5] }
+        {
+          "palet": 88,
+          "cuadros": [
+            8,
+            7,
+            6
+          ]
+        },
+        {
+          "palet": 3,
+          "cuadros": [
+            4,
+            3,
+            2
+          ]
+        },
+        {
+          "palet": 1,
+          "cuadros": [
+            6,
+            7
+          ]
+        },
+        {
+          "palet": 90,
+          "cuadros": [
+            8,
+            5
+          ]
+        },
+        {
+          "palet": 91,
+          "cuadros": [
+            4,
+            3
+          ]
+        },
+        {
+          "palet": 89,
+          "cuadros": [
+            6,
+            5
+          ]
+        }
       ]
     }
   },
   "histograma_calibre": [
-    { "calibre": 5, "cajas": 306, "pct": 1.5 },
-    { "calibre": 6, "cajas": 1366, "pct": 6.9 },
-    { "calibre": 7, "cajas": 2781, "pct": 14.0 },
-    { "calibre": 8, "cajas": 3708, "pct": 18.7 },
-    { "calibre": 9, "cajas": 3944, "pct": 19.9 },
-    { "calibre": 10, "cajas": 2852, "pct": 14.4 },
-    { "calibre": 11, "cajas": 2380, "pct": 12.0 },
-    { "calibre": 12, "cajas": 1768, "pct": 8.9 },
-    { "calibre": 13, "cajas": 526, "pct": 2.7 },
-    { "calibre": 14, "cajas": 173, "pct": 0.9 }
+    {
+      "calibre": 5,
+      "cajas": 306,
+      "pct": 1.5
+    },
+    {
+      "calibre": 6,
+      "cajas": 1366,
+      "pct": 6.9
+    },
+    {
+      "calibre": 7,
+      "cajas": 2781,
+      "pct": 14.0
+    },
+    {
+      "calibre": 8,
+      "cajas": 3708,
+      "pct": 18.7
+    },
+    {
+      "calibre": 9,
+      "cajas": 3944,
+      "pct": 19.9
+    },
+    {
+      "calibre": 10,
+      "cajas": 2852,
+      "pct": 14.4
+    },
+    {
+      "calibre": 11,
+      "cajas": 2380,
+      "pct": 12.0
+    },
+    {
+      "calibre": 12,
+      "cajas": 1768,
+      "pct": 8.9
+    },
+    {
+      "calibre": 13,
+      "cajas": 526,
+      "pct": 2.7
+    },
+    {
+      "calibre": 14,
+      "cajas": 173,
+      "pct": 0.9
+    }
   ],
   "por_cuadro": [
-    { "cuadro": 1, "palets": 11.0, "cajas": 2369, "calibre_modal": 9, "descarte_kg": 170, "palets_sin_descarte": 10.0 },
-    { "cuadro": 2, "palets": 27.3, "cajas": 5771, "calibre_modal": 9, "descarte_kg": 154, "palets_sin_descarte": 24.3 },
-    { "cuadro": 3, "palets": 15.8, "cajas": 3391, "calibre_modal": 8, "descarte_kg": 310, "palets_sin_descarte": 13.8 },
-    { "cuadro": 4, "palets": 4.8, "cajas": 1000, "calibre_modal": 8, "descarte_kg": 140, "palets_sin_descarte": 3.8 },
-    { "cuadro": 5, "palets": 14.0, "cajas": 2994, "calibre_modal": 8, "descarte_kg": 20, "palets_sin_descarte": 13.0 },
-    { "cuadro": 6, "palets": 12.3, "cajas": 2638, "calibre_modal": 9, "descarte_kg": 0, "palets_sin_descarte": 12.3 },
-    { "cuadro": 7, "palets": 6.8, "cajas": 1464, "calibre_modal": 9, "descarte_kg": 0, "palets_sin_descarte": 6.8 },
-    { "cuadro": 8, "palets": 0.8, "cajas": 178, "calibre_modal": 12, "descarte_kg": 0, "palets_sin_descarte": 0.8 }
+    {
+      "cuadro": 1,
+      "palets": 11.0,
+      "cajas": 2369,
+      "calibre_modal": 9,
+      "descarte_kg": 170,
+      "palets_sin_descarte": 10.0
+    },
+    {
+      "cuadro": 2,
+      "palets": 27.3,
+      "cajas": 5771,
+      "calibre_modal": 9,
+      "descarte_kg": 154,
+      "palets_sin_descarte": 24.3
+    },
+    {
+      "cuadro": 3,
+      "palets": 15.8,
+      "cajas": 3391,
+      "calibre_modal": 8,
+      "descarte_kg": 310,
+      "palets_sin_descarte": 13.8
+    },
+    {
+      "cuadro": 4,
+      "palets": 4.8,
+      "cajas": 1000,
+      "calibre_modal": 8,
+      "descarte_kg": 140,
+      "palets_sin_descarte": 3.8
+    },
+    {
+      "cuadro": 5,
+      "palets": 14.0,
+      "cajas": 2994,
+      "calibre_modal": 8,
+      "descarte_kg": 20,
+      "palets_sin_descarte": 13.0
+    },
+    {
+      "cuadro": 6,
+      "palets": 12.3,
+      "cajas": 2638,
+      "calibre_modal": 9,
+      "descarte_kg": 0,
+      "palets_sin_descarte": 12.3
+    },
+    {
+      "cuadro": 7,
+      "palets": 6.8,
+      "cajas": 1464,
+      "calibre_modal": 9,
+      "descarte_kg": 0,
+      "palets_sin_descarte": 6.8
+    },
+    {
+      "cuadro": 8,
+      "palets": 0.8,
+      "cajas": 178,
+      "calibre_modal": 12,
+      "descarte_kg": 0,
+      "palets_sin_descarte": 0.8
+    }
   ],
   "por_fecha": [
-    { "fecha": "2026-02-18", "cajas": 213 }, { "fecha": "2026-02-19", "cajas": 211 }, { "fecha": "2026-02-20", "cajas": 199 },
-    { "fecha": "2026-03-12", "cajas": 432 }, { "fecha": "2026-03-13", "cajas": 864 }, { "fecha": "2026-03-16", "cajas": 648 },
-    { "fecha": "2026-03-17", "cajas": 826 }, { "fecha": "2026-03-18", "cajas": 864 }, { "fecha": "2026-03-19", "cajas": 643 },
-    { "fecha": "2026-03-20", "cajas": 432 }, { "fecha": "2026-03-22", "cajas": 215 }, { "fecha": "2026-03-23", "cajas": 862 },
-    { "fecha": "2026-03-25", "cajas": 861 }, { "fecha": "2026-03-26", "cajas": 852 }, { "fecha": "2026-03-27", "cajas": 432 },
-    { "fecha": "2026-03-28", "cajas": 648 }, { "fecha": "2026-03-30", "cajas": 862 }, { "fecha": "2026-03-31", "cajas": 859 },
-    { "fecha": "2026-04-01", "cajas": 857 }, { "fecha": "2026-04-02", "cajas": 646 }, { "fecha": "2026-04-06", "cajas": 860 },
-    { "fecha": "2026-04-07", "cajas": 975 }, { "fecha": "2026-04-08", "cajas": 215 }, { "fecha": "2026-04-10", "cajas": 856 },
-    { "fecha": "2026-04-11", "cajas": 636 }, { "fecha": "2026-04-13", "cajas": 850 }, { "fecha": "2026-04-14", "cajas": 858 },
-    { "fecha": "2026-04-15", "cajas": 422 }, { "fecha": "2026-04-22", "cajas": 427 }, { "fecha": "2026-04-23", "cajas": 423 },
-    { "fecha": "2026-04-27", "cajas": 428 }, { "fecha": "2026-04-28", "cajas": 428 }
+    {
+      "fecha": "2026-02-18",
+      "cajas": 213
+    },
+    {
+      "fecha": "2026-02-19",
+      "cajas": 211
+    },
+    {
+      "fecha": "2026-02-20",
+      "cajas": 199
+    },
+    {
+      "fecha": "2026-03-12",
+      "cajas": 432
+    },
+    {
+      "fecha": "2026-03-13",
+      "cajas": 864
+    },
+    {
+      "fecha": "2026-03-16",
+      "cajas": 648
+    },
+    {
+      "fecha": "2026-03-17",
+      "cajas": 826
+    },
+    {
+      "fecha": "2026-03-18",
+      "cajas": 864
+    },
+    {
+      "fecha": "2026-03-19",
+      "cajas": 643
+    },
+    {
+      "fecha": "2026-03-20",
+      "cajas": 432
+    },
+    {
+      "fecha": "2026-03-22",
+      "cajas": 215
+    },
+    {
+      "fecha": "2026-03-23",
+      "cajas": 862
+    },
+    {
+      "fecha": "2026-03-25",
+      "cajas": 861
+    },
+    {
+      "fecha": "2026-03-26",
+      "cajas": 852
+    },
+    {
+      "fecha": "2026-03-27",
+      "cajas": 432
+    },
+    {
+      "fecha": "2026-03-28",
+      "cajas": 648
+    },
+    {
+      "fecha": "2026-03-30",
+      "cajas": 862
+    },
+    {
+      "fecha": "2026-03-31",
+      "cajas": 859
+    },
+    {
+      "fecha": "2026-04-01",
+      "cajas": 857
+    },
+    {
+      "fecha": "2026-04-02",
+      "cajas": 646
+    },
+    {
+      "fecha": "2026-04-06",
+      "cajas": 860
+    },
+    {
+      "fecha": "2026-04-07",
+      "cajas": 975
+    },
+    {
+      "fecha": "2026-04-08",
+      "cajas": 215
+    },
+    {
+      "fecha": "2026-04-10",
+      "cajas": 856
+    },
+    {
+      "fecha": "2026-04-11",
+      "cajas": 636
+    },
+    {
+      "fecha": "2026-04-13",
+      "cajas": 850
+    },
+    {
+      "fecha": "2026-04-14",
+      "cajas": 858
+    },
+    {
+      "fecha": "2026-04-15",
+      "cajas": 422
+    },
+    {
+      "fecha": "2026-04-22",
+      "cajas": 427
+    },
+    {
+      "fecha": "2026-04-23",
+      "cajas": 423
+    },
+    {
+      "fecha": "2026-04-27",
+      "cajas": 428
+    },
+    {
+      "fecha": "2026-04-28",
+      "cajas": 428
+    }
   ],
   "calibre_por_cuadro": {
-    "1": { "5": 46, "6": 357, "7": 508, "8": 459, "9": 560, "10": 274, "11": 131, "12": 34, "13": 0, "14": 0 },
-    "2": { "5": 31, "6": 120, "7": 384, "8": 1008, "9": 1133, "10": 966, "11": 974, "12": 877, "13": 223, "14": 54 },
-    "3": { "5": 32, "6": 189, "7": 528, "8": 754, "9": 693, "10": 481, "11": 360, "12": 242, "13": 78, "14": 34 },
-    "4": { "5": 4, "6": 16, "7": 85, "8": 181, "9": 155, "10": 177, "11": 148, "12": 150, "13": 60, "14": 23 },
-    "5": { "5": 114, "6": 264, "7": 519, "8": 563, "9": 556, "10": 338, "11": 324, "12": 206, "13": 78, "14": 33 },
-    "6": { "5": 29, "6": 288, "7": 482, "8": 486, "9": 531, "10": 399, "11": 264, "12": 108, "13": 37, "14": 13 },
-    "7": { "5": 49, "6": 129, "7": 262, "8": 231, "9": 283, "10": 200, "11": 156, "12": 112, "13": 34, "14": 8 },
-    "8": { "5": 0, "6": 3, "7": 12, "8": 25, "9": 33, "10": 17, "11": 24, "12": 39, "13": 16, "14": 8 }
+    "1": {
+      "5": 46,
+      "6": 357,
+      "7": 508,
+      "8": 459,
+      "9": 560,
+      "10": 274,
+      "11": 131,
+      "12": 34,
+      "13": 0,
+      "14": 0
+    },
+    "2": {
+      "5": 31,
+      "6": 120,
+      "7": 384,
+      "8": 1008,
+      "9": 1133,
+      "10": 966,
+      "11": 974,
+      "12": 877,
+      "13": 223,
+      "14": 54
+    },
+    "3": {
+      "5": 32,
+      "6": 189,
+      "7": 528,
+      "8": 754,
+      "9": 693,
+      "10": 481,
+      "11": 360,
+      "12": 242,
+      "13": 78,
+      "14": 34
+    },
+    "4": {
+      "5": 4,
+      "6": 16,
+      "7": 85,
+      "8": 181,
+      "9": 155,
+      "10": 177,
+      "11": 148,
+      "12": 150,
+      "13": 60,
+      "14": 23
+    },
+    "5": {
+      "5": 114,
+      "6": 264,
+      "7": 519,
+      "8": 563,
+      "9": 556,
+      "10": 338,
+      "11": 324,
+      "12": 206,
+      "13": 78,
+      "14": 33
+    },
+    "6": {
+      "5": 29,
+      "6": 288,
+      "7": 482,
+      "8": 486,
+      "9": 531,
+      "10": 399,
+      "11": 264,
+      "12": 108,
+      "13": 37,
+      "14": 13
+    },
+    "7": {
+      "5": 49,
+      "6": 129,
+      "7": 262,
+      "8": 231,
+      "9": 283,
+      "10": 200,
+      "11": 156,
+      "12": 112,
+      "13": 34,
+      "14": 8
+    },
+    "8": {
+      "5": 0,
+      "6": 3,
+      "7": 12,
+      "8": 25,
+      "9": 33,
+      "10": 17,
+      "11": 24,
+      "12": 39,
+      "13": 16,
+      "14": 8
+    }
+  },
+  "exportacion": {
+    "meta": {
+      "palets": 21,
+      "cajas": 4521,
+      "cuadros": [
+        "1",
+        "6",
+        "3",
+        "5",
+        "7"
+      ]
+    },
+    "histograma_calibre": [
+      {
+        "calibre": 6,
+        "cajas": 716,
+        "pct": 15.8
+      },
+      {
+        "calibre": 7,
+        "cajas": 1275,
+        "pct": 28.2
+      },
+      {
+        "calibre": 8,
+        "cajas": 848,
+        "pct": 18.8
+      },
+      {
+        "calibre": 9,
+        "cajas": 1194,
+        "pct": 26.4
+      },
+      {
+        "calibre": 10,
+        "cajas": 485,
+        "pct": 10.7
+      }
+    ],
+    "por_cuadro": [
+      {
+        "cuadro": "1",
+        "cajas": 1294,
+        "calibre_modal": 7,
+        "palets": 6
+      },
+      {
+        "cuadro": "6",
+        "cajas": 1293,
+        "calibre_modal": 7,
+        "palets": 6
+      },
+      {
+        "cuadro": "3",
+        "cajas": 864,
+        "calibre_modal": 9,
+        "palets": 4
+      },
+      {
+        "cuadro": "5",
+        "cajas": 638,
+        "calibre_modal": 7,
+        "palets": 3
+      },
+      {
+        "cuadro": "7",
+        "cajas": 432,
+        "calibre_modal": 7,
+        "palets": 2
+      }
+    ],
+    "palets": [
+      {
+        "palet_nro": "39",
+        "cn": "5",
+        "fecha": "2026-03-26",
+        "destino_raw": "Exportacion",
+        "cajas": 206,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "41",
+        "cn": "5",
+        "fecha": "2026-03-28",
+        "destino_raw": "Exp. Zonda Dos",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "42",
+        "cn": "3",
+        "fecha": "2026-03-28",
+        "destino_raw": "Exp. Zonda",
+        "cajas": 216,
+        "calibre_modal": 9
+      },
+      {
+        "palet_nro": "43",
+        "cn": "5",
+        "fecha": "2026-03-28",
+        "destino_raw": "Expo. Zonda Dos",
+        "cajas": 216,
+        "calibre_modal": 9
+      },
+      {
+        "palet_nro": "44",
+        "cn": "6",
+        "fecha": "2026-03-30",
+        "destino_raw": "Expo 2°",
+        "cajas": 216,
+        "calibre_modal": 9
+      },
+      {
+        "palet_nro": "45",
+        "cn": "6",
+        "fecha": "2026-03-30",
+        "destino_raw": "Expo Zonda",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "46",
+        "cn": "6",
+        "fecha": "2026-03-30",
+        "destino_raw": "EXPO Zonda",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "48",
+        "cn": "6",
+        "fecha": "2026-03-31",
+        "destino_raw": "Exportación 1°",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "49",
+        "cn": "6",
+        "fecha": "2026-03-31",
+        "destino_raw": "Exportacion 2°",
+        "cajas": 213,
+        "calibre_modal": 6
+      },
+      {
+        "palet_nro": "50",
+        "cn": "6",
+        "fecha": "2026-03-31",
+        "destino_raw": "Exportacion",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "52",
+        "cn": "7",
+        "fecha": "2026-04-01",
+        "destino_raw": "Exportación",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "53",
+        "cn": "7",
+        "fecha": "2026-04-01",
+        "destino_raw": "ExporTacion 2° (Dos)",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "56",
+        "cn": "1",
+        "fecha": "2026-04-01",
+        "destino_raw": "Exportación",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "57",
+        "cn": "1",
+        "fecha": "2026-04-02",
+        "destino_raw": "Exportacion 1°",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "59",
+        "cn": "1",
+        "fecha": "2026-04-02",
+        "destino_raw": "Exportacion 4°",
+        "cajas": 216,
+        "calibre_modal": 9
+      },
+      {
+        "palet_nro": "60",
+        "cn": "1",
+        "fecha": "2026-04-06",
+        "destino_raw": "Exportacion 1°",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "61",
+        "cn": "1",
+        "fecha": "2026-04-06",
+        "destino_raw": "Exportación 2°",
+        "cajas": 215,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "63",
+        "cn": "3",
+        "fecha": "2026-04-06",
+        "destino_raw": "Exportación 4°",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "58",
+        "cn": "1",
+        "fecha": "2026-04-08",
+        "destino_raw": "Exportacion 2°",
+        "cajas": 215,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "69",
+        "cn": "3",
+        "fecha": "2026-04-10",
+        "destino_raw": "Exportación 2°",
+        "cajas": 216,
+        "calibre_modal": 7
+      },
+      {
+        "palet_nro": "70",
+        "cn": "3",
+        "fecha": "2026-04-10",
+        "destino_raw": "Exportacion 2°",
+        "cajas": 216,
+        "calibre_modal": 9
+      }
+    ],
+    "calibre_por_cuadro": {
+      "1": {
+        "5": 0,
+        "6": 247,
+        "7": 366,
+        "8": 207,
+        "9": 336,
+        "10": 137,
+        "11": 1,
+        "12": 0,
+        "13": 0,
+        "14": 0
+      },
+      "6": {
+        "5": 1,
+        "6": 233,
+        "7": 340,
+        "8": 237,
+        "9": 325,
+        "10": 157,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0
+      },
+      "3": {
+        "5": 0,
+        "6": 86,
+        "7": 237,
+        "8": 202,
+        "9": 238,
+        "10": 101,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0
+      },
+      "5": {
+        "5": 1,
+        "6": 86,
+        "7": 187,
+        "8": 130,
+        "9": 182,
+        "10": 52,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0
+      },
+      "7": {
+        "5": 0,
+        "6": 64,
+        "7": 145,
+        "8": 72,
+        "9": 113,
+        "10": 38,
+        "11": 0,
+        "12": 0,
+        "13": 0,
+        "14": 0
+      }
+    }
   }
 }

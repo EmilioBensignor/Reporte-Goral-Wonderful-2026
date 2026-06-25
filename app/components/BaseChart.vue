@@ -1,8 +1,8 @@
 <template>
   <ClientOnly>
     <div class="h-full w-full">
-      <Bar v-if="type === 'bar'" :data="data" :options="mergedOptions" />
-      <Line v-else :data="data" :options="mergedOptions" />
+      <Bar v-if="type === 'bar'" :data="data" :options="mergedOptions" :plugins="plugins" />
+      <Line v-else :data="data" :options="mergedOptions" :plugins="plugins" />
     </div>
     <template #fallback>
       <div class="h-full w-full animate-pulse rounded-xl bg-neutral-200" />
@@ -26,6 +26,7 @@ const props = defineProps({
   type: { type: String, default: 'bar' },
   data: { type: Object, required: true },
   options: { type: Object, default: () => ({}) },
+  plugins: { type: Array, default: () => [] },
 })
 
 const mergedOptions = computed(() => ({
