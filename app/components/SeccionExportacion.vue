@@ -1,32 +1,37 @@
 <template>
   <section class="flex flex-col gap-6">
-    <EncabezadoSeccion kicker="Exportación" titulo="Qué calibres tiene cada cuadro"
-      :conclusion="`Los ${exportacion.meta.palets} palets de exportación salieron de ${cuadros.length} cuadros`" />
+    <EncabezadoSeccion kicker="Exportación" titulo="Cuánto salió por calibre y por cuadro"
+      :conclusion="`Los ${exportacion.meta.palets} palets de exportación (${exportacion.meta.cajas.toLocaleString('es-AR')} cajas) salieron de ${exportacion.meta.cuadros.length} cuadros`" />
 
-    <div class="overflow-x-auto rounded-3xl bg-white px-5 py-7 ring-1 ring-gris-claro/40 md:px-9 md:py-9">
-      <div class="grid items-center gap-x-3 gap-y-2"
-        :style="{ gridTemplateColumns: `auto repeat(${cuadros.length}, minmax(64px, 1fr))` }">
-
-        <div class="text-sm text-gris uppercase tracking-[0.15em]">Calibre</div>
-        <div v-for="cn in cuadros" :key="`h-${cn}`"
-          class="pb-2 text-center font-display text-xl lg:text-2xl text-vino whitespace-nowrap">
-          CN {{ cn }}
-        </div>
-
-        <template v-for="cal in calibresVisibles" :key="`row-${cal}`">
-          <div class="flex items-center gap-2 font-display text-2xl lg:text-3xl text-vino">
-            <span class="size-3 rounded-full" :style="{ background: colorCalibre(cal) }" />
-            {{ cal }}
-          </div>
-          <div v-for="cn in cuadros" :key="`${cal}-${cn}`"
-            class="flex h-16 items-center justify-center rounded-xl"
-            :style="{ background: celda(cn, cal).css }">
-            <span class="font-semibold tabular-nums"
-              :style="{ color: celda(cn, cal).oscura ? 'var(--color-crema)' : 'var(--color-vino)' }">
-              {{ pctCelda(cn, cal) ? `${pctCelda(cn, cal)}%` : '' }}
+    <div class="grid gap-5 lg:grid-cols-2 lg:gap-6">
+      <div class="flex flex-col gap-6 rounded-3xl bg-white px-5 py-7 ring-1 ring-gris-claro/40 md:px-9 md:py-9">
+        <h3 class="font-display text-xl lg:text-2xl text-vino">Cantidad de cajas por cuadro</h3>
+        <div class="grid h-72 items-end gap-3 md:gap-5"
+          :style="{ gridTemplateColumns: `repeat(${cuadros.length}, minmax(0, 1fr))` }">
+          <div v-for="b in cuadros" :key="b.id" class="flex h-full flex-col items-center justify-end gap-2">
+            <span class="text-center text-sm text-gris tabular-nums leading-tight">
+              {{ b.cajas.toLocaleString('es-AR') }}<br><span class="text-vino font-semibold">{{ b.pct }}%</span>
             </span>
+            <div class="w-full rounded-t-lg"
+              :style="{ height: `${(b.cajas / maxCuadro) * 100}%`, background: b.color }" />
+            <span class="text-center font-display text-base lg:text-lg text-vino whitespace-nowrap">{{ b.label }}</span>
           </div>
-        </template>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-6 rounded-3xl bg-white px-5 py-7 ring-1 ring-gris-claro/40 md:px-9 md:py-9">
+        <h3 class="font-display text-xl lg:text-2xl text-vino">Cantidad de cajas por calibre</h3>
+        <div class="grid h-72 items-end gap-3 md:gap-5"
+          :style="{ gridTemplateColumns: `repeat(${calibres.length}, minmax(0, 1fr))` }">
+          <div v-for="b in calibres" :key="b.id" class="flex h-full flex-col items-center justify-end gap-2">
+            <span class="text-center text-sm text-gris tabular-nums leading-tight">
+              {{ b.cajas.toLocaleString('es-AR') }}<br><span class="text-vino font-semibold">{{ b.pct }}%</span>
+            </span>
+            <div class="w-full rounded-t-lg"
+              :style="{ height: `${(b.cajas / maxCalibre) * 100}%`, background: b.color }" />
+            <span class="text-center font-display text-base lg:text-lg text-vino">{{ b.label }}</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -37,20 +42,6 @@ import { computed } from 'vue'
 
 const props = defineProps({ exportacion: { type: Object, required: true } })
 
-const cuadros = computed(() => [...props.exportacion.meta.cuadros].sort((a, b) => Number(a) - Number(b)))
-const matriz = computed(() => props.exportacion.calibre_por_cuadro)
-
-const calibresVisibles = computed(() =>
-  [5, 6, 7, 8, 9, 10, 11, 12, 13, 14].filter((cal) => {
-    const total = cuadros.value.reduce((s, cn) => s + matriz.value[cn][String(cal)], 0)
-    const granTotal = cuadros.value.reduce((s, cn) => s + Object.values(matriz.value[cn]).reduce((a, b) => a + b, 0), 0)
-    return total / granTotal >= 0.01
-  }),
-)
-
-const totalCn = (cn) => calibresVisibles.value.reduce((s, cal) => s + matriz.value[cn][String(cal)], 0)
-const pctCelda = (cn, cal) => Math.round((matriz.value[cn][String(cal)] / totalCn(cn)) * 100)
-
 const colorCalibre = (cal) => {
   const t = (cal - 5) / 9
   const r = Math.round(47 + t * (226 - 47))
@@ -59,13 +50,28 @@ const colorCalibre = (cal) => {
   return `rgb(${r}, ${g}, ${b})`
 }
 
-const celda = (cn, cal) => {
-  const [r, g, b] = colorCalibre(cal).match(/\d+/g).map(Number)
-  const pct = matriz.value[cn][String(cal)] / totalCn(cn)
-  const t = Math.min(pct / 0.34, 1)
-  const lerp = (from, to) => Math.round(from + (to - from) * t)
-  const [cr, cg, cb] = [lerp(253, r), lerp(249, g), lerp(249, b)]
-  const luminancia = (cr * 299 + cg * 587 + cb * 114) / 1000
-  return { css: `rgb(${cr}, ${cg}, ${cb})`, oscura: luminancia < 140 }
-}
+const paletaCuadros = ['#6f1d2e', '#9a2942', '#c0405c', '#d96f54', '#e2a64a', '#b48a3a']
+
+const totalCajas = computed(() => props.exportacion.por_cuadro.reduce((s, f) => s + f.cajas, 0))
+
+const cuadros = computed(() =>
+  [...props.exportacion.por_cuadro]
+    .sort((a, b) => Number(a.cuadro) - Number(b.cuadro))
+    .map((f, i) => ({
+      id: f.cuadro,
+      label: `CN ${f.cuadro}`,
+      cajas: f.cajas,
+      pct: Math.round((f.cajas / totalCajas.value) * 1000) / 10,
+      color: paletaCuadros[i % paletaCuadros.length],
+    })),
+)
+
+const calibres = computed(() =>
+  [...props.exportacion.histograma_calibre]
+    .sort((a, b) => a.calibre - b.calibre)
+    .map((f) => ({ id: f.calibre, label: f.calibre, cajas: f.cajas, pct: f.pct, color: colorCalibre(f.calibre) })),
+)
+
+const maxCuadro = computed(() => Math.max(...cuadros.value.map((b) => b.cajas)))
+const maxCalibre = computed(() => Math.max(...calibres.value.map((b) => b.cajas)))
 </script>
