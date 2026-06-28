@@ -19,7 +19,7 @@
         </button>
       </div>
       <div class="h-80">
-        <BaseChart type="bar" :data="desgloseData" :options="desgloseOptions" />
+        <BaseChart type="bar" :data="desgloseData" :options="desgloseOptions" :plugins="[etiquetasBarra]" />
       </div>
     </div>
   </section>
@@ -45,11 +45,48 @@ const desgloseData = computed(() => ({
   }],
 }))
 
-const desgloseOptions = {
-  plugins: { legend: { display: false } },
-  scales: {
-    x: { grid: { display: false }, ticks: { color: '#480311', font: { size: 12 } } },
-    y: { beginAtZero: true, grid: { color: '#ede6e6' }, ticks: { color: '#615b5c' } },
+const desgloseOptions = computed(() => {
+  const total = calibres.reduce((s, cal) => s + props.matriz[cnSeleccionado.value][String(cal)], 0)
+  return {
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: (ctx) => {
+            const v = ctx.parsed.y
+            const pct = total ? Math.round((v / total) * 1000) / 10 : 0
+            return `${ctx.dataset.label}: ${v.toLocaleString('es-AR')} (${pct}%)`
+          },
+        },
+      },
+    },
+    layout: { padding: { top: 28 } },
+    scales: {
+      x: { grid: { display: false }, ticks: { color: '#480311', font: { size: 12 } } },
+      y: { beginAtZero: true, grid: { color: '#ede6e6' }, ticks: { color: '#615b5c' } },
+    },
+  }
+})
+
+const etiquetasBarra = {
+  id: 'etiquetasBarra',
+  afterDatasetsDraw(chart) {
+    const { ctx } = chart
+    const meta = chart.getDatasetMeta(0)
+    const total = meta.data.reduce((s, _, i) => s + chart.data.datasets[0].data[i], 0)
+    ctx.save()
+    ctx.textAlign = 'center'
+    ctx.fillStyle = '#480311'
+    meta.data.forEach((bar, i) => {
+      const v = chart.data.datasets[0].data[i]
+      if (!v) return
+      const pct = total ? Math.round((v / total) * 1000) / 10 : 0
+      ctx.font = '600 12px sans-serif'
+      ctx.fillText(v.toLocaleString('es-AR'), bar.x, bar.y - 16)
+      ctx.font = '400 11px sans-serif'
+      ctx.fillText(`${pct}%`, bar.x, bar.y - 4)
+    })
+    ctx.restore()
   },
 }
 
